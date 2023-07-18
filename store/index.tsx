@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode, createContext, useCallback, useContext, useState } from "react";
+import { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -38,17 +38,13 @@ export const useTodo = ()=>{
 export const TodosProvider = ({children}:{children:ReactNode})=>{
 
 
-    const [todos,setTodos] = useState<Todo[]>(
-    
-    ()=>{
-        if(localStorage.getItem("todo")){
-            return JSON.parse(localStorage.getItem('todo')||'[]') as Todo[];
-        }
-        return [];
-    }
-    );
+    const [todos, setTodos] = useState<Todo[]>([])
+     //an array of To
 
-
+     useEffect(()=>{
+        const todo = localStorage.getItem("todo") || "[]";
+        setTodos(JSON.parse(todo))
+     },[])
     function handleOnAddTodos (title:string,description:string):void{
         setTodos((prev)=>{
             const newTodo = [
@@ -104,7 +100,7 @@ export const TodosProvider = ({children}:{children:ReactNode})=>{
         newTodo[index].name=name;
         newTodo[index].description=description;
         setTodos(newTodo);
-        localStorage.setItem("todo",JSON.stringify(newTodo));
+          localStorage.setItem("todo",JSON.stringify(newTodo));
 
 
     }
