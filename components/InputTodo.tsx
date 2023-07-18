@@ -52,7 +52,7 @@ const InputTodo = () => {
         />
         <button
           onClick={handleOnAddTodo}
-          className="mt-5 bg-green-700 font-bold hover:bg-green-800 py-2"
+          className="mt-5 bg-green-700 font-bold hover:bg-green-800 py-2 rounded-md"
         >
           Add todo
         </button>

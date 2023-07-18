@@ -59,8 +59,8 @@ const TodoList = () => {
               </div>
 
               <div
-                className=" lg:w-[25rem]
-            w-[30rem] md:w-[15rem] flex justify-center items-center md:h-52 h-64 relative overflow-y-auto p-2 text-slate-400 "
+                className=" sm:w-[20rem] lg:w-[25rem]
+            w-[20rem] md:w-[25rem] flex justify-center  items-center md:h-52 h-64 relative overflow-y-auto p-2 text-slate-400 "
               >
 
                   

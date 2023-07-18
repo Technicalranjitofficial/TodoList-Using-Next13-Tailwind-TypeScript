@@ -18,7 +18,7 @@ export default function Home() {
     "
       >
 
-        <h1 className=" text-xl md:text-2xl mb-10 mt-10 md:mt-0 font-bold">TODO LIST: Using Next-13 & TYPESCRIPT</h1>
+        <h1 className=" text-xl text-center md:text-2xl mb-10 mt-10 md:mt-0 font-bold">TODO LIST: Using Next-13 & TYPESCRIPT</h1>
        <InputTodo/>
 
        
